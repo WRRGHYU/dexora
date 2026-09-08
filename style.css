@@ -91,20 +91,27 @@ nav.main-nav a:hover, nav.main-nav a.active { color: var(--gold-bright); border-
 .hero-art { display: flex; justify-content: center; }
 .hero-art svg { width: min(320px, 85%); }
 
-/* home page only: decorative graphic sits faintly behind the hero text */
-.hero-home .container { position: relative; }
+/* home page: full-width single-column hero text (no side graphic) */
 .hero-home .hero-grid { grid-template-columns: 1fr; }
-.hero-home .hero-copy { position: relative; z-index: 1; }
-.hero-home .hero-art {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  width: 620px; max-width: 100%; opacity: 0.08; z-index: 0; pointer-events: none;
-}
-.hero-home .hero-art svg { width: 100%; }
 
 .meta-row { display: flex; gap: 32px; margin-top: 44px; flex-wrap: wrap; }
 .meta-row div { display: flex; flex-direction: column; gap: 4px; }
 .meta-row strong { color: var(--gold-bright); font-family: "Cairo", sans-serif; font-size: 1.5rem; }
 .meta-row span { color: var(--cream-dim); font-size: 0.85rem; }
+
+/* home page: tiled geometric pattern across the whole page background */
+body.page-home {
+  background-color: var(--black);
+  background-image: url("pattern-tile.png");
+  background-repeat: repeat;
+}
+.page-home .section-soft,
+.page-home .booking {
+  background-color: rgba(20, 19, 17, 0.9);
+}
+.page-home footer.site-footer {
+  background-color: rgba(28, 26, 21, 0.92);
+}
 
 /* ---------- section head ---------- */
 .section-head { max-width: 60ch; margin-bottom: 48px; }
@@ -205,5 +212,4 @@ footer.site-footer { background: var(--black-alt); padding: 64px 0 0; border-top
   section { padding: 64px 0; }
   .hero { padding-top: 48px; }
   .hero-actions .btn { flex: 1 1 auto; }
-  .hero-home .hero-art { display: none; }
 }
